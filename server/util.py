@@ -93,7 +93,11 @@ def get_cropped_image_if_2_eyes(image_path, image_base64_data):
     return cropped_faces
 
 
+def get_b64_test_image_for_virat():
+    with open("server/b64.txt") as f:
+        return f.read()
+
 if __name__ == '__main__':
     load_saved_artifacts()
 
-    print(classify_image(None, "model/dataset/cropped/erling haaland/erling haaland 3.png"))
+    print(classify_image(get_b64_test_image_for_virat(), None))
