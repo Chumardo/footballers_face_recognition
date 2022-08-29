@@ -11,7 +11,7 @@
 
 <body>
     <nav class="navbar navbar-light bg-light justify-content-center">
-        <a class="navbar-brand" href="/">Sports Person Classifier</a>
+        <a class="navbar-brand" href="/">Footballer Classifier</a>
     </nav>
 
     <div class="container">
@@ -90,12 +90,13 @@
                                 
                         </form>
                     </div>
+                    
                 </div>
 
             </div>
             
             <div class="col-sm-8 error" id="error" >
-                <p>Image should be clear and need to be seen both eyes.</p>    
+                <p>{{ prediction_dict[0]['class'] }}</p>    
             </div>
 
             <div class="col-sm-4" id="resultHolder">
@@ -108,23 +109,23 @@
                         </tr>
                         <tr>
                             <td>Erling Haaland</td>
-                            <td id="score_erling_haaland"></td>
+                            <td id="score_erling_haaland">{{ prediction_dict[0]['class_probability'][4] }}</td>
                         </tr>
                         <tr>
                             <td>Gabriel Jesus</td>
-                            <td id="score_gabriel_jesus"></td>
+                            <td id="score_gabriel_jesus">{{ prediction_dict[0]['class_probability'][2] }}</td>
                         </tr>
                         <tr>
                             <td>Mohamed Salah</td>
-                            <td id="score_mohamed_salah"></td>
+                            <td id="score_mohamed_salah">{{ prediction_dict[0]['class_probability'][3] }}</td>
                         </tr>
                         <tr>
                             <td>Ruben Dias</td>
-                            <td id="score_ruben_dias"></td>
+                            <td id="score_ruben_dias">{{ prediction_dict[0]['class_probability'][1] }}</td>
                         </tr>
                         <tr>
                             <td>Van Dijk</td>
-                            <td id="score_van_dijk"></td>
+                            <td id="score_van_dijk">{{ prediction_dict[0]['class_probability'][0] }}</td>
                         </tr>
                 </table>
             </div>

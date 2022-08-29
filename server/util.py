@@ -92,12 +92,5 @@ def get_cropped_image_if_2_eyes(image_path, image_base64_data):
                 cropped_faces.append(roi_color)
     return cropped_faces
 
-
-def get_b64_test_image_for_virat():
-    with open("server/b64.txt") as f:
-        return f.read()
-
 if __name__ == '__main__':
     load_saved_artifacts()
-
-    print(classify_image(get_b64_test_image_for_virat(), None))
